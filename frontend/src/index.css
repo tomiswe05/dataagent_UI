@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
+/* ── Theme tokens ── */
+:root {
+  /* Backgrounds */
+  --bg:              hsl(0, 0%, 100%);
+  --bg-secondary:    hsl(140, 15%, 95%);
+  --bg-card:         hsl(145, 40%, 94%);
+  --bg-muted:        hsl(140, 20%, 90%);
+
+  /* Borders */
+  --border:          hsl(140, 15%, 85%);
+  --border-subtle:   hsl(140, 10%, 92%);
+
+  /* Text */
+  --text:            hsl(150, 15%, 10%);
+  --text-muted:      hsl(145, 10%, 45%);
+  --text-on-primary: hsl(0, 0%, 100%);
+
+  /* Primary green */
+  --primary:         hsl(145, 72%, 30%);
+  --primary-hover:   hsl(145, 72%, 25%);
+  --primary-light:   hsl(145, 50%, 94%);
+
+  /* Accents */
+  --accent:          hsl(160, 60%, 40%);
+
+  /* Hero glow */
+  --hero-glow:       hsl(145, 50%, 92%);
+
+  /* Bubbles */
+  --bubble-user-from:  hsl(145, 72%, 30%);
+  --bubble-user-to:    hsl(155, 65%, 25%);
+  --bubble-ai-from:    hsl(145, 50%, 94%);
+  --bubble-ai-to:      hsl(160, 40%, 92%);
+  --bubble-ai-text:    hsl(150, 15%, 10%);
+}
+
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg:              hsl(150, 15%, 5%);
+  --bg-secondary:    hsl(150, 12%, 8%);
+  --bg-card:         hsl(150, 12%, 10%);
+  --bg-muted:        hsl(150, 10%, 13%);
+
+  /* Borders */
+  --border:          hsl(150, 12%, 18%);
+  --border-subtle:   hsl(150, 10%, 14%);
+
+  /* Text */
+  --text:            hsl(140, 20%, 90%);
+  --text-muted:      hsl(145, 10%, 50%);
+  --text-on-primary: hsl(0, 0%, 100%);
+
+  /* Primary green */
+  --primary:         hsl(145, 72%, 45%);
+  --primary-hover:   hsl(145, 72%, 52%);
+  --primary-light:   hsl(145, 30%, 15%);
+
+  /* Accents */
+  --accent:          hsl(160, 60%, 50%);
+
+  /* Hero glow */
+  --hero-glow:       hsl(145, 40%, 10%);
+
+  /* Bubbles */
+  --bubble-user-from:  hsl(145, 72%, 30%);
+  --bubble-user-to:    hsl(155, 65%, 25%);
+  --bubble-ai-from:    hsl(150, 12%, 12%);
+  --bubble-ai-to:      hsl(150, 12%, 10%);
+  --bubble-ai-text:    hsl(140, 20%, 88%);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}

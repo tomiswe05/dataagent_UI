@@ -1,0 +1,210 @@
+/* ── Navbar ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Brand */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+
+.navbar__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'Sora', sans-serif;
+}
+
+.navbar__name--large {
+  font-size: 1.1rem;
+}
+
+/* Desktop center links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__link {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar__link:hover {
+  color: var(--text);
+}
+
+/* Desktop right actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar__theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.4rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar__theme-btn:hover {
+  color: var(--text);
+  background: var(--bg-muted);
+}
+
+.navbar__login {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navbar__login:hover {
+  background: var(--bg-muted);
+}
+
+.navbar__try {
+  background-color: var(--primary);
+  color: var(--text-on-primary);
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+}
+
+.navbar__try:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Mobile hamburger — hidden on desktop */
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 0.4rem;
+  border-radius: 6px;
+}
+
+/* ── Mobile menu overlay ── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1.25rem;
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu__close {
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 0.4rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu__divider {
+  height: 1px;
+  background-color: var(--border);
+  margin: 0.75rem 0;
+}
+
+.mobile-menu__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-menu__link {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  display: block;
+  transition: color 0.2s;
+}
+
+.mobile-menu__link:hover {
+  color: var(--text);
+}
+
+.mobile-menu__footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-menu__theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-light);
+  border: none;
+  color: var(--primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.mobile-menu__theme-btn:hover {
+  background-color: var(--bg-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navbar__links,
+  .navbar__actions {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+    align-items: center;
+  }
+}
