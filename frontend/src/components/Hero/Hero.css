@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  min-height: 100vh;
   padding: 5rem 1.5rem 4rem;
   background: radial-gradient(ellipse 90% 55% at 50% 0%, var(--hero-glow), var(--bg) 70%);
 }
