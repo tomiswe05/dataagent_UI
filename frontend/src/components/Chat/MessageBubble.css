@@ -131,7 +131,8 @@
 .msg__content code     { background: var(--bg-muted); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.85em; color: var(--primary); font-family: 'Courier New', monospace; }
 .msg__content pre      { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1em; overflow-x: auto; margin: 0.5em 0; }
 .msg__content pre code { background: none; padding: 0; color: var(--text); }
-.msg__content table    { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 0.5em 0; }
+.msg__table-wrap       { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0.5em 0; border-radius: 8px; border: 1px solid var(--border); }
+.msg__content table    { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 0; }
 .msg__content th       { background: var(--bg-card); padding: 0.4em 0.75em; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .msg__content td       { padding: 0.4em 0.75em; border-bottom: 1px solid var(--border-subtle); }
 .msg__content tr:last-child td { border-bottom: none; }

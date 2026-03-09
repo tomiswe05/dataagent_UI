@@ -29,6 +29,6 @@ export interface Message {
   reportName?: string
   isStreaming?: boolean
   toolCalls?: string[]
-  filename?: string
   statusText?: string
+  filename?: string
 }

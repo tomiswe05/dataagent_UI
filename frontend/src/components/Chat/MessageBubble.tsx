@@ -1,19 +1,8 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import LogoIcon from '../Navbar/LogoIcon'
+import type { Message } from '../../types'
 import './MessageBubble.css'
-
-interface Message {
-  id: string
-  role: 'user' | 'assistant'
-  content: string
-  intent?: string
-  pdf?: string
-  reportName?: string
-  isStreaming?: boolean
-  toolCalls?: string[]
-  statusText?: string
-}
 
 const INTENT_LABELS: Record<string, string> = {
   simple_answer:    'Quick Answer',
@@ -66,7 +55,16 @@ export default function MessageBubble({ message }: Props) {
         {/* Markdown content */}
         {message.content && (
           <div className={`msg__content ${message.isStreaming ? 'msg__content--streaming' : ''}`}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                table: ({ children }) => (
+                  <div className="msg__table-wrap">
+                    <table>{children}</table>
+                  </div>
+                ),
+              }}
+            >
               {message.content}
             </ReactMarkdown>
           </div>
