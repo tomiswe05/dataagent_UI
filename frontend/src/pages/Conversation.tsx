@@ -13,6 +13,12 @@ export default function Conversation() {
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Prevent iOS Safari from scrolling the body when the keyboard opens
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [])
+
+  useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
