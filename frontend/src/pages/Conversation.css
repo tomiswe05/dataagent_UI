@@ -1,6 +1,6 @@
 .conversation {
   display: flex;
-  height: 100dvh;
+  height: var(--conversation-height, 100dvh);
   background-color: var(--bg);
   overflow: hidden;
 }

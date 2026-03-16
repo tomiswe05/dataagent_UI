@@ -13,9 +13,21 @@ export default function Conversation() {
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Prevent iOS Safari from scrolling the body when the keyboard opens
     document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
+
+    const vv = window.visualViewport
+    const updateHeight = () => {
+      const h = vv ? vv.height : window.innerHeight
+      document.documentElement.style.setProperty('--conversation-height', `${h}px`)
+    }
+    updateHeight()
+    vv?.addEventListener('resize', updateHeight)
+
+    return () => {
+      document.body.style.overflow = ''
+      vv?.removeEventListener('resize', updateHeight)
+      document.documentElement.style.removeProperty('--conversation-height')
+    }
   }, [])
 
   useEffect(() => {
